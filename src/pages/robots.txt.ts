@@ -1,4 +1,3 @@
-// https://docs.astro.build/en/guides/integrations-guide/sitemap/#usage
 import type { APIRoute } from 'astro';
 
 const robotsTxt = `
@@ -20,7 +19,7 @@ Crawl-delay: 2
 User-agent: *
 Disallow: /
 
-Sitemap: ${new URL('sitemap-index.xml', import.meta.env.SITE).href}
+Sitemap: https://pumpsolutions.com/sitemap-index.xml
 `.trim();
 
 export const GET: APIRoute = () => {

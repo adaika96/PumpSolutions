@@ -7,6 +7,24 @@ interface Props {
   url: string;
   name: string;
 }
+
+// Define Arabic translations for url and name properties
+const arTranslations = {
+  "/": "/ar",
+  "/products": "/ar/products",
+  "/services": "/ar/services",
+  "/blog": "/ar/blog",
+  "/contact": "/ar/contact",
+  "Home": "الصفحة الرئيسية",
+  "Products": "المنتجات",
+  "Services": "الخدمات",
+  "Blog": "مدونة",
+  "Contact": "اتصل بنا"
+};
+
+// Translate url and name properties if the current locale is Arabic
+const translatedUrl = Astro.currentLocale === "ar" ? arTranslations[url] : url;
+const translatedName = Astro.currentLocale === "ar" ? arTranslations[name] : name;
 ---
 
 <!--
@@ -16,12 +34,12 @@ We assign an ID matching the URL for easy reference in our script.
 If URL is '/' (home page), assign ID as 'home' 
 -->
 <a
-  id={url === "/" ? "home" : url.replace("/", "")}
-  href={url}
+  id={translatedUrl === "/" ? "home" : translatedUrl.replace("/", "")}
+  href={translatedUrl}
   data-astro-prefetch
   class="rounded-lg text-base font-medium text-neutral-600 outline-hidden ring-zinc-500 hover:text-neutral-500 focus-visible:ring-3 dark:text-neutral-400 dark:ring-zinc-200 dark:hover:text-neutral-500 dark:focus:outline-hidden md:py-3 md:text-sm 2xl:text-base"
 >
-  {name}
+  {translatedName}
 </a>
 
 <script>

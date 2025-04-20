@@ -1,4 +1,3 @@
-// An array of links for navigation bar
 const navBarLinks = [
   { name: "Home", url: "/" },
   { name: "Products", url: "/products" },
@@ -6,7 +5,7 @@ const navBarLinks = [
   { name: "Blog", url: "/blog" },
   { name: "Contact", url: "/contact" },
 ];
-// An array of links for footer
+
 const footerLinks = [
   {
     section: "Ecosystem",
@@ -26,11 +25,11 @@ const footerLinks = [
     ],
   },
 ];
-// An object of links for social icons
+
 const socialLinks = {
   facebook: "https://www.facebook.com/",
   x: "https://twitter.com/",
-  github: "https://github.com/mearashadowfax/ScrewFast",
+  github: "https://github.com/adaika96/PumpSolutions",
   google: "https://www.google.com/",
   slack: "https://slack.com/",
 };
